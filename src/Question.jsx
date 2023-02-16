@@ -2,7 +2,9 @@ import React from "react";
 
 const Question = (props) => {
     return(
-        <p>{props.question}</p>
+        <div>
+            <p>{props.question.question}</p>
+        </div>
     );
 }
 

@@ -1,15 +1,12 @@
-import { id } from "ethers/lib/utils.js";
 import React, {useState, useEffect} from "react"
 import Question from "./Question"
 import Result from "./Result"
 import './index.css'; //czy tylko tak zaimportowac
 
 const App = () => {
-
-
     const[score,setScore] = useState(0);
     const[index,setIndex] = useState(0);
-    useEffect(() => {}, [index,score]) //czy to dziala i czy re renderuje automatycznie
+    useEffect(() => console.log(`index wynosi: ${index}`), [index,score]) //czy to dziala i czy re renderuje automatycznie
 
     const questions = [{
         question:"Is your daily Screen time higher than 5h per day",
@@ -43,8 +40,8 @@ const App = () => {
         return(
             <div id="main">
                 <Question question={questions[index]}/>
-                <button className="yes" onClick={handlerAnws(true)}>yes</button>
-                <button className="no" onClick={handlerAnws(false)}>no</button>
+                <button className="yes" onClick={() => handlerAnws(true)}>yes</button>
+                <button className="no" onClick={() => handlerAnws(false)}>no</button>
             </div>
         );
     }
